@@ -4,6 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const app = express();
+const Url = require("./models/url");
 
 // Basic Configuration
 const port = process.env.PORT || 8000;
@@ -22,12 +23,6 @@ app.get("/api/hello", function (req, res) {
   res.json({ greeting: "hello API" });
 });
 
-let urlSchema = new mongoose.Schema({
-  original: { type: String, required: true },
-  short: Number,
-});
-
-let Url = mongoose.model("Url", urlSchema);
 let urlObject = {};
 
 app.post(
