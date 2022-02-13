@@ -38,7 +38,7 @@ app.post(
     let urlRegex = new RegExp(/^[http://www.]/gi);
 
     if (!inputUrl.match(urlRegex)) {
-      res.json({ error: "Invaliid URL" });
+      res.json({ error: "Invalid URL" });
       return;
     }
 
